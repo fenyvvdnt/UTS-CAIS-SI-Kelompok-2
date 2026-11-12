@@ -3,35 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mahasiswa - CAIS Portal Akademik</title>
+    <title>SIAKAD CAIS - Data Mahasiswa</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="app-body">
 
-    <!-- Navigasi Utama -->
-    <nav class="navbar">
-        <div class="nav-brand">🎓 CAIS Portal</div>
-        <ul class="nav-links">
-            <li><a href="../index.html">Beranda</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="mahasiswa.html" class="active">Data Mahasiswa</a></li>
-            <li><a href="login.html" class="btn-logout">Keluar</a></li>
-        </ul>
+    <!-- Topbar Kampus -->
+    <header class="campus-topbar">
+        <div class="brand-area">
+            <div class="campus-logo">🎓</div>
+            <div>
+                <h1>SIAKAD CAIS</h1>
+                <span>Collaborative Academic Information System</span>
+            </div>
+        </div>
+        <div class="user-profile">
+            <span class="semester-pill">TA 2026/2027 - Ganjil</span>
+            <div class="user-info">
+                <strong>Feny Widianti</strong>
+                <small>Sistem Informasi</small>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigasi Menu -->
+    <nav class="campus-navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="mahasiswa.html" class="active">Data Mahasiswa</a></li>
+            </ul>
+            <a href="login.html" class="btn-logout">Keluar Sistem</a>
+        </div>
     </nav>
 
     <!-- Konten Utama -->
     <main class="main-container">
-        <div class="card-panel">
+        <div class="breadcrumb">
+            Beranda / Akademik / <strong>Data Mahasiswa</strong>
+        </div>
+
+        <!-- Ringkasan Statistik Kampus -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total Mahasiswa</span>
+                <h3 class="stat-value">4</h3>
+                <span class="stat-desc">Terdaftar di sistem</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Mahasiswa Aktif</span>
+                <h3 class="stat-value text-green">3</h3>
+                <span class="stat-desc">Mengisi KRS semester ini</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Status Cuti</span>
+                <h3 class="stat-value text-amber">1</h3>
+                <span class="stat-desc">Cuti akademik resmi</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Rata-rata IPK</span>
+                <h3 class="stat-value text-blue">3.74</h3>
+                <span class="stat-desc">Indeks Prestasi Kumulatif</span>
+            </div>
+        </section>
+
+        <!-- Panel Tabel Mahasiswa -->
+        <section class="card-panel">
             <div class="card-header-flex">
                 <div>
-                    <h2>Daftar Data Mahasiswa</h2>
-                    <p class="subtitle">Data akademik mahasiswa aktif Semester Ganjil 2026/2027</p>
+                    <h2>Direktori Data Mahasiswa</h2>
+                    <p class="subtitle">Daftar resmi mahasiswa aktif dan status akademik program studi</p>
                 </div>
-                <button class="btn-add" onclick="alert('Fitur tambah data siap dikembangkan!')">+ Tambah Data</button>
+                <div class="action-bar">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Cari NIM atau nama...">
+                    <button class="btn-add" onclick="alert('Form tambah mahasiswa siap digunakan!')">+ Tambah Data</button>
+                </div>
             </div>
 
             <div class="table-responsive">
-                <table class="student-table">
+                <table class="student-table" id="studentTable">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -39,51 +90,62 @@
                             <th>Nama Lengkap</th>
                             <th>Program Studi</th>
                             <th>Semester</th>
+                            <th>IPK</th>
                             <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><strong>202401001</strong></td>
-                            <td>Feny Widianti</td>
+                            <td><span class="nim-code">202401001</span></td>
+                            <td><strong>Feny Widianti</strong></td>
                             <td>Sistem Informasi</td>
                             <td>5</td>
+                            <td>3.88</td>
                             <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Feny Widianti (202401001)')">Detail</button></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><strong>202401002</strong></td>
-                            <td>Rizky Pratama Putra</td>
+                            <td><span class="nim-code">202401002</span></td>
+                            <td><strong>Rizky Pratama Putra</strong></td>
                             <td>Sistem Informasi</td>
                             <td>5</td>
+                            <td>3.72</td>
                             <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Rizky Pratama Putra (202401002)')">Detail</button></td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td><strong>202401003</strong></td>
-                            <td>Nadia Putri Maharani</td>
+                            <td><span class="nim-code">202401003</span></td>
+                            <td><strong>Nadia Putri Maharani</strong></td>
                             <td>Teknik Informatika</td>
                             <td>3</td>
+                            <td>3.81</td>
                             <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Nadia Putri Maharani (202401003)')">Detail</button></td>
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td><strong>202301018</strong></td>
-                            <td>Dimas Aditya Saputra</td>
+                            <td><span class="nim-code">202301018</span></td>
+                            <td><strong>Dimas Aditya Saputra</strong></td>
                             <td>Sistem Informasi</td>
                             <td>7</td>
+                            <td>3.55</td>
                             <td><span class="badge badge-cuti">Cuti</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Dimas Aditya Saputra (202301018)')">Detail</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="app-footer">
-        <p>&copy; 2026 Collaborative Academic Information System (CAIS)</p>
+        <p>&copy; 2026 Biro Administrasi Akademik &bull; Collaborative Academic Information System (CAIS)</p>
     </footer>
 
+    <script src="../js/script.js"></script>
 </body>
 </html>
