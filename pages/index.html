@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - SIAKAD CAIS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Atas (Brand & User Info) -->
+    <header class="top-header">
+        <div class="brand-container">
+            <span class="logo-icon">🎓</span>
+            <div>
+                <div class="brand-title">SIAKAD CAIS</div>
+                <div class="brand-subtitle">Collaborative Academic Information System</div>
+            </div>
+        </div>
+        <div class="user-profile-header">
+            <span class="badge-ta">TA 2026/2027 - Ganjil</span>
+            <div class="user-info-text">
+                <span class="user-name">Azra Deliana Pratiwi</span>
+                <span class="user-role">Sistem Informasi</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigasi Menu -->
+    <nav class="sub-navbar">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Beranda</a></li>
+            <li><a href="pages/dashboard.html">Dashboard</a></li>
+            <li><a href="pages/mahasiswa.html">Data Mahasiswa</a></li>
+        </ul>
+        <a href="pages/login.html" class="btn-logout">Keluar Sistem</a>
+    </nav>
+
+    <!-- Konten Utama Beranda -->
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            Beranda / Halaman Utama
+        </div>
+
+        <!-- Hero Section / Sambutan -->
+        <div class="hero-section" style="background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-bottom: 2rem;">
+            <h1 style="color: #1e293b; margin-bottom: 0.75rem; font-size: 1.8rem;">Selamat Datang di SIAKAD CAIS 🚀</h1>
+            <p style="color: #64748b; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                Collaborative Academic Information System (CAIS) adalah platform sistem informasi akademik terpadu yang dikembangkan secara kolaboratif untuk memudahkan pengelolaan data mahasiswa, pemantauan status akademik, serta navigasi perkuliahan.
+            </p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="pages/dashboard.html" style="background-color: #1e293b; color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Buka Dashboard</a>
+                <a href="pages/mahasiswa.html" style="background-color: #f1f5f9; color: #1e293b; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; border: 1px solid #cbd5e1;">Lihat Data Mahasiswa</a>
+            </div>
+        </div>
+
+        <!-- Ringkasan Modul Sistem -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>Modul Beranda</h3>
+                <p class="stat-number" style="font-size: 1.2rem; color: #3b82f6;">Pusat Informasi</p>
+                <span class="stat-desc">Halaman sambutan dan navigasi utama sistem.</span>
+            </div>
+            <div class="card">
+                <h3>Modul Dashboard</h3>
+                <p class="stat-number" style="font-size: 1.2rem; color: #10b981;">Statistik Akademik</p>
+                <span class="stat-desc">Ringkasan IPK, SKS, dan status mahasiswa aktif.</span>
+            </div>
+            <div class="card">
+                <h3>Modul Data Mahasiswa</h3>
+                <p class="stat-number" style="font-size: 1.2rem; color: #f59e0b;">Direktori Terpadu</p>
+                <span class="stat-desc">Daftar lengkap rekapitulasi mahasiswa program studi.</span>
+            </div>
+        </div>
+
+        <!-- Informasi Pengembang -->
+        <div class="info-section">
+            <h2>Tim Pengembang Sistem (Kelompok 2)</h2>
+            <ul>
+                <li><strong>Azra Deliana Pratiwi</strong> — Dashboard Developer & Integrasi Sistem</li>
+                <li><strong>Feny Widianti</strong> — Beranda / Login & Autentikasi</li>
+                <li><strong>Tesa Sulistia</strong> — Data Mahasiswa & Manajemen Tabel</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
