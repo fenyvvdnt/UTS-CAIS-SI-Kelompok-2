@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Navigasi */
+.navbar {
+    background-color: #1e293b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-logout {
+    background-color: #ef4444;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white !important;
+}
+
+/* Layout Container */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    margin-bottom: 0.25rem;
+    color: #1e293b;
+}
+
+.welcome-text {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+/* Grid Kartu Dashboard */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid #3b82f6;
+}
+
+.card h3 {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Bagian Informasi / Pengumuman */
+.info-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.info-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+.info-section ul {
+    padding-left: 1.5rem;
+    color: #475569;
+}
+
+.info-section li {
+    margin-bottom: 0.5rem;
+}
