@@ -1,103 +1,89 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f4f6f9;
-    color: #333;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa - CAIS Portal Akademik</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="app-body">
 
-.navbar {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <!-- Navigasi Utama -->
+    <nav class="navbar">
+        <div class="nav-brand">🎓 CAIS Portal</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Beranda</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mahasiswa.html" class="active">Data Mahasiswa</a></li>
+            <li><a href="login.html" class="btn-logout">Keluar</a></li>
+        </ul>
+    </nav>
 
-.nav-brand {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <div class="card-panel">
+            <div class="card-header-flex">
+                <div>
+                    <h2>Daftar Data Mahasiswa</h2>
+                    <p class="subtitle">Data akademik mahasiswa aktif Semester Ganjil 2026/2027</p>
+                </div>
+                <button class="btn-add" onclick="alert('Fitur tambah data siap dikembangkan!')">+ Tambah Data</button>
+            </div>
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
+            <div class="table-responsive">
+                <table class="student-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama Lengkap</th>
+                            <th>Program Studi</th>
+                            <th>Semester</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>202401001</strong></td>
+                            <td>Feny Widianti</td>
+                            <td>Sistem Informasi</td>
+                            <td>5</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>202401002</strong></td>
+                            <td>Rizky Pratama Putra</td>
+                            <td>Sistem Informasi</td>
+                            <td>5</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>202401003</strong></td>
+                            <td>Nadia Putri Maharani</td>
+                            <td>Teknik Informatika</td>
+                            <td>3</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>202301018</strong></td>
+                            <td>Dimas Aditya Saputra</td>
+                            <td>Sistem Informasi</td>
+                            <td>7</td>
+                            <td><span class="badge badge-cuti">Cuti</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 500;
-}
+    <footer class="app-footer">
+        <p>&copy; 2026 Collaborative Academic Information System (CAIS)</p>
+    </footer>
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ffffff;
-    border-bottom: 2px solid #38bdf8;
-    padding-bottom: 4px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.page-header h1 {
-    margin-bottom: 0.25rem;
-    color: #1e3a8a;
-}
-
-.table-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-top: 1.5rem;
-}
-
-.table-controls {
-    margin-bottom: 1rem;
-}
-
-#searchInput {
-    width: 100%;
-    max-width: 320px;
-    padding: 0.6rem 0.8rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 0.95rem;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 0.85rem;
-    text-align: left;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-th {
-    background-color: #f1f5f9;
-    color: #1e293b;
-    font-weight: 600;
-}
-
-tr:hover {
-    background-color: #f8fafc;
-}
-
-.badge-aktif {
-    background-color: #dcfce7;
-    color: #166534;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
+</body>
+</html>
