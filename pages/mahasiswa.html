@@ -1,103 +1,151 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #f4f6f9;
-    color: #333;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAKAD CAIS - Data Mahasiswa</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="app-body">
 
-.navbar {
-    background-color: #1e3a8a;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <!-- Topbar Kampus -->
+    <header class="campus-topbar">
+        <div class="brand-area">
+            <div class="campus-logo">🎓</div>
+            <div>
+                <h1>SIAKAD CAIS</h1>
+                <span>Collaborative Academic Information System</span>
+            </div>
+        </div>
+        <div class="user-profile">
+            <span class="semester-pill">TA 2026/2027 - Ganjil</span>
+            <div class="user-info">
+                <strong>Feny Widianti</strong>
+                <small>Sistem Informasi</small>
+            </div>
+        </div>
+    </header>
 
-.nav-brand {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+    <!-- Navigasi Menu -->
+    <nav class="campus-navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="mahasiswa.html" class="active">Data Mahasiswa</a></li>
+            </ul>
+            <a href="login.html" class="btn-logout">Keluar Sistem</a>
+        </div>
+    </nav>
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <div class="breadcrumb">
+            Beranda / Akademik / <strong>Data Mahasiswa</strong>
+        </div>
 
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 500;
-}
+        <!-- Ringkasan Statistik Kampus -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total Mahasiswa</span>
+                <h3 class="stat-value">4</h3>
+                <span class="stat-desc">Terdaftar di sistem</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Mahasiswa Aktif</span>
+                <h3 class="stat-value text-green">3</h3>
+                <span class="stat-desc">Mengisi KRS semester ini</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Status Cuti</span>
+                <h3 class="stat-value text-amber">1</h3>
+                <span class="stat-desc">Cuti akademik resmi</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Rata-rata IPK</span>
+                <h3 class="stat-value text-blue">3.74</h3>
+                <span class="stat-desc">Indeks Prestasi Kumulatif</span>
+            </div>
+        </section>
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ffffff;
-    border-bottom: 2px solid #38bdf8;
-    padding-bottom: 4px;
-}
+        <!-- Panel Tabel Mahasiswa -->
+        <section class="card-panel">
+            <div class="card-header-flex">
+                <div>
+                    <h2>Direktori Data Mahasiswa</h2>
+                    <p class="subtitle">Daftar resmi mahasiswa aktif dan status akademik program studi</p>
+                </div>
+                <div class="action-bar">
+                    <input type="text" id="searchInput" class="search-box" placeholder="Cari NIM atau nama...">
+                    <button class="btn-add" onclick="alert('Form tambah mahasiswa siap digunakan!')">+ Tambah Data</button>
+                </div>
+            </div>
 
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
+            <div class="table-responsive">
+                <table class="student-table" id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama Lengkap</th>
+                            <th>Program Studi</th>
+                            <th>Semester</th>
+                            <th>IPK</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="nim-code">202401001</span></td>
+                            <td><strong>Feny Widianti</strong></td>
+                            <td>Sistem Informasi</td>
+                            <td>5</td>
+                            <td>3.88</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Feny Widianti (202401001)')">Detail</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="nim-code">202401002</span></td>
+                            <td><strong>Rizky Pratama Putra</strong></td>
+                            <td>Sistem Informasi</td>
+                            <td>5</td>
+                            <td>3.72</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Rizky Pratama Putra (202401002)')">Detail</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="nim-code">202401003</span></td>
+                            <td><strong>Nadia Putri Maharani</strong></td>
+                            <td>Teknik Informatika</td>
+                            <td>3</td>
+                            <td>3.81</td>
+                            <td><span class="badge badge-aktif">Aktif</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Nadia Putri Maharani (202401003)')">Detail</button></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="nim-code">202301018</span></td>
+                            <td><strong>Dimas Aditya Saputra</strong></td>
+                            <td>Sistem Informasi</td>
+                            <td>7</td>
+                            <td>3.55</td>
+                            <td><span class="badge badge-cuti">Cuti</span></td>
+                            <td><button class="btn-detail" onclick="alert('Detail Mahasiswa: Dimas Aditya Saputra (202301018)')">Detail</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
-.page-header h1 {
-    margin-bottom: 0.25rem;
-    color: #1e3a8a;
-}
+    <footer class="app-footer">
+        <p>&copy; 2026 Biro Administrasi Akademik &bull; Collaborative Academic Information System (CAIS)</p>
+    </footer>
 
-.table-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-top: 1.5rem;
-}
-
-.table-controls {
-    margin-bottom: 1rem;
-}
-
-#searchInput {
-    width: 100%;
-    max-width: 320px;
-    padding: 0.6rem 0.8rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 0.95rem;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 0.85rem;
-    text-align: left;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-th {
-    background-color: #f1f5f9;
-    color: #1e293b;
-    font-weight: 600;
-}
-
-tr:hover {
-    background-color: #f8fafc;
-}
-
-.badge-aktif {
-    background-color: #dcfce7;
-    color: #166534;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
+    <script src="../js/script.js"></script>
+</body>
+</html>

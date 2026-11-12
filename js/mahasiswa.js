@@ -1,36 +1,16 @@
-const dataMahasiswa = [
-    { nim: "11523026", nama: "Tesa Sulistia", prodi: "Sistem Informasi", semester: 5, status: "Aktif" },
-    { nim: "11523014", nama: "Feny Widianti", prodi: "Sistem Informasi", semester: 5, status: "Aktif" },
-    { nim: "11523008", nama: "Azra Deliana Pratiwi", prodi: "Sistem Informasi", semester: 5, status: "Aktif" },
-    { nim: "11523031", nama: "Muhammad Faiz Hanifah", prodi: "Sistem Informasi", semester: 5, status: "Aktif" }
-];
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const table = document.getElementById("studentTable");
 
-const tbody = document.getElementById("mahasiswaBody");
-const searchInput = document.getElementById("searchInput");
+    if (searchInput && table) {
+        searchInput.addEventListener("keyup", function () {
+            const filter = searchInput.value.toLowerCase();
+            const rows = table.getElementsByTagName("tr");
 
-function renderTabel(data) {
-    tbody.innerHTML = "";
-    data.forEach((mhs, index) => {
-        const row = `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${mhs.nim}</td>
-                <td>${mhs.nama}</td>
-                <td>${mhs.prodi}</td>
-                <td>${mhs.semester}</td>
-                <td><span class="badge-aktif">${mhs.status}</span></td>
-            </tr>
-        `;
-        tbody.innerHTML += row;
-    });
-}
-
-searchInput.addEventListener("input", function () {
-    const keyword = this.value.toLowerCase();
-    const filtered = dataMahasiswa.filter(mhs =>
-        mhs.nama.toLowerCase().includes(keyword) || mhs.nim.includes(keyword)
-    );
-    renderTabel(filtered);
+            for (let i = 1; i < rows.length; i++) {
+                const rowText = rows[i].textContent.toLowerCase();
+                rows[i].style.display = rowText.includes(filter) ? "" : "none";
+            }
+        });
+    }
 });
-
-renderTabel(dataMahasiswa);
