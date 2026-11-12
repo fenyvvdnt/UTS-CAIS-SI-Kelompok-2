@@ -3,32 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - CAIS (Collaborative Academic Information System)</title>
+    <title>Dashboard - SIAKAD CAIS</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navigasi Utama -->
-    <nav class="navbar">
-        <div class="logo">CAIS Academic</div>
+
+    <!-- Header Atas (Brand & User Info) -->
+    <header class="top-header">
+        <div class="brand-container">
+            <span class="logo-icon">🎓</span>
+            <div>
+                <div class="brand-title">SIAKAD CAIS</div>
+                <div class="brand-subtitle">Collaborative Academic Information System</div>
+            </div>
+        </div>
+        <div class="user-profile-header">
+            <span class="badge-ta">TA 2026/2027 - Ganjil</span>
+            <div class="user-info-text">
+                <span class="user-name">Azra Deliana Pratiwi</span>
+                <span class="user-role">Sistem Informasi</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigasi Menu -->
+    <nav class="sub-navbar">
         <ul class="nav-links">
             <li><a href="../index.html">Beranda</a></li>
             <li><a href="dashboard.html" class="active">Dashboard</a></li>
             <li><a href="mahasiswa.html">Data Mahasiswa</a></li>
-            <li><a href="login.html" class="btn-logout">Logout</a></li>
         </ul>
+        <a href="login.html" class="btn-logout">Keluar Sistem</a>
     </nav>
 
-    <!-- Konten Utama Dashboard -->
+    <!-- Konten Utama -->
     <div class="container">
-        <h1>Dashboard Akademik</h1>
-        <p class="welcome-text">Selamat datang kembali, <strong>Azra Deliana Pratiwi</strong> (Mahasiswa Sistem Informasi)</p>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            Beranda / Akademik / Dashboard
+        </div>
 
-        <!-- Kartu Ringkasan / Statistik Akademik -->
+        <!-- Kartu Statistik / Ringkasan Akademik -->
         <div class="card-grid">
             <div class="card">
                 <h3>IPK Saat Ini</h3>
                 <p class="stat-number">3.85</p>
-                <span class="stat-desc">Semester 7 Aktif</span>
+                <span class="stat-desc">Indeks Prestasi Kumulatif</span>
             </div>
             <div class="card">
                 <h3>Total SKS Diambil</h3>
@@ -36,9 +56,14 @@
                 <span class="stat-desc">Target Kelulusan: 144 SKS</span>
             </div>
             <div class="card">
-                <h3>Mata Kuliah Semester Ini</h3>
-                <p class="stat-number">6 MK</p>
-                <span class="stat-desc">Kehadiran 95%</span>
+                <h3>Status Semester</h3>
+                <p class="stat-number status-aktif">Aktif</p>
+                <span class="stat-desc">Semester 7 (Tujuh)</span>
+            </div>
+            <div class="card">
+                <h3>Kehadiran Kuliah</h3>
+                <p class="stat-number">95%</p>
+                <span class="stat-desc">Kehadiran semester ini</span>
             </div>
         </div>
 
@@ -52,5 +77,6 @@
             </ul>
         </div>
     </div>
+
 </body>
 </html>
